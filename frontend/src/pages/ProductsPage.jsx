@@ -46,14 +46,14 @@ function ProductsPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-100 via-sky-100 to-indigo-200 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-100 via-sky-100 to-indigo-200 px-4 py-6 md:px-8">
 
       {/* Search / Filter / Sort */}
       <div
         className="
           bg-white/90
           backdrop-blur-sm
-          p-6
+          p-4 md:p-6
           rounded-3xl
           shadow-xl
           border
@@ -61,7 +61,7 @@ function ProductsPage() {
           mb-8
         "
       >
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
 
           {/* Search */}
           <input
@@ -73,7 +73,7 @@ function ProductsPage() {
               setCurrentPage(1);
             }}
             className="
-              md:col-span-2
+              md:col-span-6
               border
               border-gray-300
               rounded-xl
@@ -94,6 +94,7 @@ function ProductsPage() {
               setCurrentPage(1);
             }}
             className="
+              md:col-span-3
               border
               border-gray-300
               rounded-xl
@@ -114,6 +115,7 @@ function ProductsPage() {
             value={sortOrder}
             onChange={(e) => setSortOrder(e.target.value)}
             className="
+              md:col-span-3
               border
               border-gray-300
               rounded-xl
@@ -131,18 +133,20 @@ function ProductsPage() {
       </div>
 
       {/* Heading */}
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-3xl font-bold text-slate-800">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-3 mb-6">
+
+        <h2 className="text-2xl md:text-4xl font-bold text-slate-800">
           Products
         </h2>
 
-        <span className="text-gray-600 font-medium">
+        <span className="text-gray-700 font-medium">
           Total Products: {filteredProducts.length}
         </span>
+
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
         {currentProducts.map((product) => (
           <div
@@ -150,8 +154,6 @@ function ProductsPage() {
             className="
               bg-white/95
               backdrop-blur-sm
-              border
-              border-white
               rounded-3xl
               shadow-lg
               overflow-hidden
@@ -164,11 +166,12 @@ function ProductsPage() {
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-52 object-cover"
+              className="w-full h-48 md:h-56 object-cover"
             />
 
             <div className="p-5">
-              <h3 className="text-xl font-bold text-slate-800">
+
+              <h3 className="text-lg md:text-xl font-bold text-slate-800">
                 {product.name}
               </h3>
 
@@ -188,21 +191,24 @@ function ProductsPage() {
                   text-center
                   bg-blue-600
                   text-white
-                  py-2
-                  rounded-lg
+                  py-2.5
+                  rounded-xl
                   hover:bg-blue-700
                   transition
+                  font-medium
                 "
               >
                 View Product
               </Link>
+
             </div>
           </div>
         ))}
+
       </div>
 
       {/* Pagination */}
-      <div className="flex justify-center items-center gap-4 mt-10">
+      <div className="flex flex-wrap justify-center items-center gap-3 mt-10">
 
         <button
           onClick={() =>
@@ -213,10 +219,11 @@ function ProductsPage() {
           className="
             bg-blue-600
             text-white
-            px-5
+            px-4 md:px-5
             py-2
-            rounded-lg
+            rounded-xl
             hover:bg-blue-700
+            transition
           "
         >
           Previous
@@ -235,16 +242,18 @@ function ProductsPage() {
           className="
             bg-blue-600
             text-white
-            px-5
+            px-4 md:px-5
             py-2
-            rounded-lg
+            rounded-xl
             hover:bg-blue-700
+            transition
           "
         >
           Next
         </button>
 
       </div>
+
     </div>
   );
 }

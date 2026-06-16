@@ -30,17 +30,17 @@ function AddProductPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-100 via-sky-100 to-indigo-200 flex justify-center items-center p-6">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-100 via-sky-100 to-indigo-200 px-4 py-6 md:p-8 flex justify-center items-center">
 
-      <div className="w-full max-w-xl bg-white rounded-3xl shadow-2xl overflow-hidden">
+      <div className="w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden">
 
         {/* Header */}
-        <div className="bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 text-white p-6">
-          <h1 className="text-3xl font-bold">
+        <div className="bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 text-white p-5 md:p-7">
+          <h1 className="text-2xl md:text-4xl font-bold">
             Add New Product 🛒
           </h1>
 
-          <p className="mt-2 text-sm text-gray-200">
+          <p className="mt-2 text-sm md:text-base text-gray-200">
             Create a new product for your store
           </p>
         </div>
@@ -48,7 +48,7 @@ function AddProductPage() {
         {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="p-6 space-y-4"
+          className="p-4 md:p-8 space-y-5"
         >
           <input
             type="text"
@@ -142,7 +142,8 @@ function AddProductPage() {
                 alt="Preview"
                 className="
                   w-full
-                  h-64
+                  h-48
+                  md:h-72
                   object-cover
                   rounded-2xl
                   border
@@ -185,6 +186,7 @@ function AddProductPage() {
               font-semibold
               hover:bg-blue-700
               transition
+              shadow-lg
             "
           >
             Add Product
