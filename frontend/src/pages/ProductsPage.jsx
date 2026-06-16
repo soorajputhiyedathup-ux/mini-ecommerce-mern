@@ -49,18 +49,8 @@ function ProductsPage() {
     <div className="min-h-screen bg-gradient-to-br from-cyan-100 via-sky-100 to-indigo-200 px-4 py-6 md:px-8">
 
       {/* Search / Filter / Sort */}
-      <div
-        className="
-          bg-white/90
-          backdrop-blur-sm
-          p-4 md:p-6
-          rounded-3xl
-          shadow-xl
-          border
-          border-gray-200
-          mb-8
-        "
-      >
+      <div className="bg-white/90 backdrop-blur-sm p-5 md:p-6 rounded-3xl shadow-xl border border-gray-200 mb-8">
+
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
 
           {/* Search */}
@@ -146,7 +136,7 @@ function ProductsPage() {
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
         {currentProducts.map((product) => (
           <div
@@ -166,12 +156,12 @@ function ProductsPage() {
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-48 md:h-56 object-cover"
+              className="w-full h-52 object-cover"
             />
 
             <div className="p-5">
 
-              <h3 className="text-lg md:text-xl font-bold text-slate-800">
+              <h3 className="text-xl font-bold text-slate-800">
                 {product.name}
               </h3>
 
@@ -219,7 +209,7 @@ function ProductsPage() {
           className="
             bg-blue-600
             text-white
-            px-4 md:px-5
+            px-5
             py-2
             rounded-xl
             hover:bg-blue-700
@@ -242,7 +232,7 @@ function ProductsPage() {
           className="
             bg-blue-600
             text-white
-            px-4 md:px-5
+            px-5
             py-2
             rounded-xl
             hover:bg-blue-700
